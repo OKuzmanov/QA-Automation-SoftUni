@@ -1,0 +1,17 @@
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\bin\Debug\net6.0\Zippopotamus.exe
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\bin\Debug\net6.0\Zippopotamus.deps.json
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\bin\Debug\net6.0\Zippopotamus.runtimeconfig.json
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\bin\Debug\net6.0\Zippopotamus.dll
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\bin\Debug\net6.0\Zippopotamus.pdb
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\bin\Debug\net6.0\RestSharp.dll
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\obj\Debug\net6.0\Zippopotamus.csproj.AssemblyReference.cache
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\obj\Debug\net6.0\Zippopotamus.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\obj\Debug\net6.0\Zippopotamus.AssemblyInfoInputs.cache
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\obj\Debug\net6.0\Zippopotamus.AssemblyInfo.cs
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\obj\Debug\net6.0\Zippopotamus.csproj.CoreCompileInputs.cache
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\obj\Debug\net6.0\Zippopotamus.csproj.CopyComplete
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\obj\Debug\net6.0\Zippopotamus.dll
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\obj\Debug\net6.0\refint\Zippopotamus.dll
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\obj\Debug\net6.0\Zippopotamus.pdb
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\obj\Debug\net6.0\Zippopotamus.genruntimeconfig.cache
+C:\Users\Oleg\Desktop\Zippopotamus_API_Test\Zippopotamus\Zippopotamus\obj\Debug\net6.0\ref\Zippopotamus.dll

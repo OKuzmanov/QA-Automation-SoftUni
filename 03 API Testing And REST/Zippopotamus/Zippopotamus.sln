@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zippopotamus", "Zippopotamus\Zippopotamus.csproj", "{189EADD2-D254-4709-AD74-DE68BC187AC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZippopotamusAPITest", "ZippopotamusAPITest\ZippopotamusAPITest.csproj", "{CA7F9C13-F200-4ADC-B5D4-1C76CC47D4F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{189EADD2-D254-4709-AD74-DE68BC187AC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{189EADD2-D254-4709-AD74-DE68BC187AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{189EADD2-D254-4709-AD74-DE68BC187AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{189EADD2-D254-4709-AD74-DE68BC187AC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA7F9C13-F200-4ADC-B5D4-1C76CC47D4F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA7F9C13-F200-4ADC-B5D4-1C76CC47D4F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA7F9C13-F200-4ADC-B5D4-1C76CC47D4F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA7F9C13-F200-4ADC-B5D4-1C76CC47D4F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F23AFF70-5E0D-4346-BB1A-B89710611FBC}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,17 @@
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\bin\Debug\net6.0\RestSharp_GitHub_Demo.exe
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\bin\Debug\net6.0\RestSharp_GitHub_Demo.deps.json
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\bin\Debug\net6.0\RestSharp_GitHub_Demo.runtimeconfig.json
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\bin\Debug\net6.0\RestSharp_GitHub_Demo.dll
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\bin\Debug\net6.0\RestSharp_GitHub_Demo.pdb
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\bin\Debug\net6.0\RestSharp.dll
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\obj\Debug\net6.0\RestSharp_GitHub_Demo.csproj.AssemblyReference.cache
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\obj\Debug\net6.0\RestSharp_GitHub_Demo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\obj\Debug\net6.0\RestSharp_GitHub_Demo.AssemblyInfoInputs.cache
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\obj\Debug\net6.0\RestSharp_GitHub_Demo.AssemblyInfo.cs
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\obj\Debug\net6.0\RestSharp_GitHub_Demo.csproj.CoreCompileInputs.cache
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\obj\Debug\net6.0\RestSharp_GitHub_Demo.csproj.CopyComplete
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\obj\Debug\net6.0\RestSharp_GitHub_Demo.dll
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\obj\Debug\net6.0\refint\RestSharp_GitHub_Demo.dll
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\obj\Debug\net6.0\RestSharp_GitHub_Demo.pdb
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\obj\Debug\net6.0\RestSharp_GitHub_Demo.genruntimeconfig.cache
+C:\Users\Oleg\Desktop\RestSharp_GitHub_Demo\RestSharp_GitHub_Demo\obj\Debug\net6.0\ref\RestSharp_GitHub_Demo.dll
