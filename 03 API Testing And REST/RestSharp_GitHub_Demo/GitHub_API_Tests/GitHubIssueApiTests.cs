@@ -16,7 +16,7 @@ namespace GitHub_Issues_API_Tests
 
         private string owner = "OKuzmanov";
         private string repo = "QA-Automation-SoftUni";
-        private string token = "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";
+        private string token = "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";
 
         [SetUp]
         public void Setup()
@@ -29,7 +29,7 @@ namespace GitHub_Issues_API_Tests
         public async Task Test_GetAllIssuesStatusOk()
         {
             //Arrange
-            this.request = new RestRequest("/repos/OKuzmanov/QA-Automation-SoftUni/issues", Method.Get);
+            this.request = new RestRequest($"/repos/{owner}/{repo}/issues", Method.Get);
 
             RestResponse response = await this.client.ExecuteAsync(request);
 
@@ -40,7 +40,7 @@ namespace GitHub_Issues_API_Tests
         public async Task Test_GetAllIssuesMiltipleIssues()
         {
             //Arrange
-            this.request = new RestRequest("/repos/OKuzmanov/QA-Automation-SoftUni/issues", Method.Get);
+            this.request = new RestRequest($"/repos/{owner}/{repo}/issues", Method.Get);
 
             //Act
             RestResponse response = await this.client.ExecuteAsync(request);
@@ -63,7 +63,7 @@ namespace GitHub_Issues_API_Tests
         [Test]
         public async Task Test_GetAllIssuesInvalidRepository()
         {
-            this.request = new RestRequest("/repos/OKuzmanov/NonExistentRepo/issues", Method.Get);
+            this.request = new RestRequest($"/repos/{owner}/NonExistentRepo/issues", Method.Get);
 
             RestResponse response = await this.client.ExecuteAsync(request);
 
@@ -74,7 +74,7 @@ namespace GitHub_Issues_API_Tests
         [Test]
         public async Task Test_GetAllIssuesInvalidUser()
         {
-            this.request = new RestRequest("/repos/InvalidUser/NonExistentRepo/issues", Method.Get);
+            this.request = new RestRequest($"/repos/InvalidUser/{repo}/issues", Method.Get);
 
             RestResponse response = await this.client.ExecuteAsync(request);
 
@@ -85,7 +85,11 @@ namespace GitHub_Issues_API_Tests
         [Test]
         public async Task Test_GetSignleIssue()
         {
-            this.request = new RestRequest("/repos/OKuzmanov/QA-Automation-SoftUni/issues/2", Method.Get);
+            string title = "Test Issue - Test Get Request";
+            string body = "Test get http request. Get single issue.";
+            GithubIssue newIssue = await this.CreateNewIssue(title, body);
+
+            this.request = new RestRequest($"/repos/{owner}/{repo}/issues/{newIssue.number}", Method.Get);
 
             RestResponse response = await this.client.ExecuteAsync(request);
 
@@ -96,14 +100,15 @@ namespace GitHub_Issues_API_Tests
             Assert.IsNotNull(issue);
             Assert.That(issue.id, Is.GreaterThan(0));
             Assert.That(issue.number, Is.GreaterThan(0));
-            Assert.That(issue.title.Length, Is.GreaterThan(0));
+            Assert.AreEqual(title, issue.title);
+            Assert.AreEqual(body, issue.body);
         }
 
         [Test]
         public async Task Test_PostIssueWithTitleAndBody()
         {
             //Arrange
-            this.request = new RestRequest("/repos/OKuzmanov/QA-Automation-SoftUni/issues", Method.Post);
+            this.request = new RestRequest($"/repos/{owner}/{repo}/issues", Method.Post);
             string titleToAdd = "Test Post Request from RestSharp";
             string bodyToAdd = "This issue is made via RestSharp API.";
             this.request.AddJsonBody(new { title = titleToAdd, body = bodyToAdd });
@@ -124,7 +129,7 @@ namespace GitHub_Issues_API_Tests
         [Test]
         public async Task Test_PostIssueWithoutTitle()
         {
-            this.request = new RestRequest("/repos/OKuzmanov/QA-Automation-SoftUni/issues", Method.Post);
+            this.request = new RestRequest($"/repos/{owner}/{repo}/issues", Method.Post);
             string bodyToAdd = "This issue is made via RestSharp API.";
             this.request.AddJsonBody(new { body = bodyToAdd });
 
@@ -136,27 +141,29 @@ namespace GitHub_Issues_API_Tests
         [Test]
         public async Task Test_UpdateExistingIssue()
         {
-            this.request = new RestRequest("/repos/OKuzmanov/QA-Automation-SoftUni/issues/27", Method.Patch);
-            string newTitle = "Test Update Issue RestSharp";
-            string newBody = "The new updated body of the issue.";
+            GithubIssue issue = await this.CreateNewIssue("Test Issue - To Update", "Created from Restsharp.");
+
+            this.request = new RestRequest($"/repos/{owner}/{repo}/issues/{issue.number}", Method.Patch);
+            string newTitle = "Test Issue - Updated Title";
+            string newBody = "The issue's body and title are updated using RestSharp.";
             this.request.AddJsonBody(new { title = newTitle, body = newBody });
 
             RestResponse response = await this.client.ExecuteAsync(request);
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
-            GithubIssue issue = JsonSerializer.Deserialize<GithubIssue>(response.Content);
+            GithubIssue updatedIssue = JsonSerializer.Deserialize<GithubIssue>(response.Content);
 
-            Assert.That(issue.id, Is.GreaterThan(0));
-            Assert.That(issue.number, Is.GreaterThan(0));
-            Assert.AreEqual(newTitle, issue.title);
-            Assert.AreEqual(newBody, issue.body);
+            Assert.That(updatedIssue.id, Is.GreaterThan(0));
+            Assert.That(updatedIssue.number, Is.GreaterThan(0));
+            Assert.AreEqual(newTitle, updatedIssue.title);
+            Assert.AreEqual(newBody, updatedIssue.body);
         }
 
         [Test]
         public async Task Test_UpdateNonExistingIssue()
         {
-            this.request = new RestRequest("/repos/OKuzmanov/QA-Automation-SoftUni/issues/113000000", Method.Patch);
+            this.request = new RestRequest($"/repos/{owner}/{repo}/issues/113000000", Method.Patch);
             string newTitle = "Test Update Issue RestSharp";
             string newBody = "The new updated body of the issue.";
             this.request.AddJsonBody(new { title = newTitle, body = newBody });
@@ -165,28 +172,16 @@ namespace GitHub_Issues_API_Tests
 
             Assert.AreEqual(HttpStatusCode.NotFound, response.StatusCode);
         }
-    }
-
-    public class IssueCommentsApiTests
-    {
-        private RestClient client;
-        private RestRequest request;
-
-        private string owner = "OKuzmanov";
-        private string repo = "QA-Automation-SoftUni";
-        private string token = "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";
-
-        [SetUp]
-        public void Setup()
-        {
-            this.client = new RestClient("https://api.github.com");
-            this.client.Authenticator = new HttpBasicAuthenticator(owner, token);
-        }
 
         [Test]
         public async Task Test_IssueCommentsGetAllComments()
         {
-            this.request = new RestRequest("/repos/OKuzmanov/QA-Automation-SoftUni/issues/27/comments", Method.Get);
+            GithubIssue issue = await this.CreateNewIssue("Test Issue - Get All Comments Request", "");
+            await this.CreateNewCommentForIssue(issue, "Test comment #1");
+            await this.CreateNewCommentForIssue(issue, "Test comment #2");
+            await this.CreateNewCommentForIssue(issue, "Test comment #3");
+
+            this.request = new RestRequest($"/repos/{owner}/{repo}/issues/{issue.number}/comments", Method.Get);
 
             var response = await this.client.ExecuteAsync(request);
 
@@ -195,6 +190,7 @@ namespace GitHub_Issues_API_Tests
             List<GithubComment> comments = JsonSerializer.Deserialize<List<GithubComment>>(response.Content);
 
             Assert.That(comments.Count > 0);
+            Assert.AreEqual(3, comments.Count);
 
             foreach (GithubComment comment in comments)
             {
@@ -206,7 +202,11 @@ namespace GitHub_Issues_API_Tests
         [Test]
         public async Task Test_IssueCommentsGetSingleComment()
         {
-            this.request = new RestRequest("/repos/OKuzmanov/QA-Automation-SoftUni/issues/comments/1127436258", Method.Get);
+            GithubIssue issue = await this.CreateNewIssue("Test Issue - Get Single Comment Request", "");
+
+            GithubComment commentToAdd = await this.CreateNewCommentForIssue(issue, "Test comment #1");
+
+            this.request = new RestRequest($"/repos/{owner}/{repo}/issues/comments/{commentToAdd.id}", Method.Get);
 
             var response = await this.client.ExecuteAsync(request);
 
@@ -215,15 +215,17 @@ namespace GitHub_Issues_API_Tests
             GithubComment comment = JsonSerializer.Deserialize<GithubComment>(response.Content);
 
             Assert.That(comment.id, Is.GreaterThan(0));
-            Assert.That(comment.body.Length, Is.GreaterThan(0));
+            Assert.AreEqual(commentToAdd.body, comment.body);
 
         }
 
         [Test]
         public async Task Test_IssueCommentCreateComment()
         {
-            this.request = new RestRequest("/repos/OKuzmanov/QA-Automation-SoftUni/issues/27/comments", Method.Post);
-            string bodyToAdd = "Test Comment for issue 27 using RestSharp API.";
+            GithubIssue issue = await this.CreateNewIssue("Test Issue - Create Comment", "This issue is created to test create comment func.");
+
+            this.request = new RestRequest($"/repos/{owner}/{repo}/issues/{issue.number}/comments", Method.Post);
+            string bodyToAdd = "Test Comment created using RestSharp API.";
             this.request.AddJsonBody(new { body = bodyToAdd });
 
             var response = await this.client.ExecuteAsync(request);
@@ -239,7 +241,9 @@ namespace GitHub_Issues_API_Tests
         [Test]
         public async Task Test_IssueCommentCreateCommentNoBody()
         {
-            this.request = new RestRequest("/repos/OKuzmanov/QA-Automation-SoftUni/issues/27/comments", Method.Post);
+            GithubIssue issue = await this.CreateNewIssue("Test Issue - Create Invalid Comment", "");
+
+            this.request = new RestRequest($"/repos/{owner}/{repo}/issues/{issue.number}/comments", Method.Post);
 
             var response = await this.client.ExecuteAsync(request);
 
@@ -249,7 +253,11 @@ namespace GitHub_Issues_API_Tests
         [Test]
         public async Task Test_IssueCommentUpdateExistingComment()
         {
-            this.request = new RestRequest("/repos/OKuzmanov/QA-Automation-SoftUni/issues/comments/1127458188", Method.Patch);
+            GithubIssue issue = await this.CreateNewIssue("Test Issue - Update Comment Request", "");
+
+            GithubComment commentToAdd = await this.CreateNewCommentForIssue(issue, "Test comment #1");
+
+            this.request = new RestRequest($"/repos/{owner}/{repo}/issues/comments/{commentToAdd.id}", Method.Patch);
             string updatedBody = "Testing the update issue comment functionality of GitHub RESTful API.";
             this.request.AddBody(new { body = updatedBody });
 
@@ -260,13 +268,13 @@ namespace GitHub_Issues_API_Tests
             GithubComment comment = JsonSerializer.Deserialize<GithubComment>(response.Content);
 
             Assert.That(comment.id, Is.GreaterThan(0));
-            Assert.AreEqual(comment.body, updatedBody);
+            Assert.AreEqual(updatedBody, comment.body);
         }
 
         [Test]
         public async Task Test_IssueCommentUpdateNonExistingComment()
         {
-            this.request = new RestRequest("/repos/OKuzmanov/QA-Automation-SoftUni/issues/comments/00000000", Method.Patch);
+            this.request = new RestRequest($"/repos/{owner}/{repo}/issues/comments/00000000", Method.Patch);
             string updatedBody = "Testing the update issue comment functionality of GitHub RESTful API with an invalid comment.";
             this.request.AddBody(new { body = updatedBody });
 
@@ -278,9 +286,9 @@ namespace GitHub_Issues_API_Tests
         [Test]
         public async Task Test_IssueCommentDeleteComment()
         {
-            GithubIssue issue = await createNewIssue("Test Issue - Delete Comment", "Testing the delete comment functionality.");
+            GithubIssue issue = await CreateNewIssue("Test Issue - Delete Comment", "Testing the delete comment functionality.");
 
-            GithubComment comment = await createNewCommentForIssue(issue, "Comment to be deleted");
+            GithubComment comment = await CreateNewCommentForIssue(issue, "Comment to be deleted");
 
             int oldCommentsCount = await CountCommentsForIssue(issue);
 
@@ -294,16 +302,16 @@ namespace GitHub_Issues_API_Tests
             Assert.Greater(oldCommentsCount, newCommentsCount);
         }
 
-        private async Task<GithubComment> createNewCommentForIssue(GithubIssue issue, string body)
+        private async Task<GithubComment> CreateNewCommentForIssue(GithubIssue issue, string body)
         {
-            RestRequest createCommentRequest = new RestRequest($"/repos/{owner}/{token}/issues/{issue.number}/comments", Method.Post);
+            RestRequest createCommentRequest = new RestRequest($"/repos/{owner}/{repo}/issues/{issue.number}/comments", Method.Post);
             createCommentRequest.AddJsonBody(new { body = body });
             RestResponse createCommentResponse = await this.client.ExecuteAsync(createCommentRequest);
             GithubComment comment = JsonSerializer.Deserialize<GithubComment>(createCommentResponse.Content);
             return comment;
         }
 
-        private async Task<GithubIssue> createNewIssue(string title, string body)
+        private async Task<GithubIssue> CreateNewIssue(string title, string body)
         {
             RestRequest createIssuerequest = new RestRequest($"/repos/{owner}/{repo}/issues", Method.Post);
             createIssuerequest.AddJsonBody(new { title = title, body = body });

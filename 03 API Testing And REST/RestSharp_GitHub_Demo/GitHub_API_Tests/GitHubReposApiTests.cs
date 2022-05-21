@@ -14,17 +14,20 @@ namespace GitHub_Repos_API_Tests
 
         private RestClient client;
 
+        private string owner = "OKuzmanov";
+        private string token = "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";
+
         [SetUp]
         public void init()
         {
             this.client = new RestClient("https://api.github.com");
-            this.client.Authenticator = new HttpBasicAuthenticator("OKuzmanov", "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");
+            this.client.Authenticator = new HttpBasicAuthenticator(owner, token);
         }
 
         [Test]
         public async Task Test_GetAllReposForUser()
         {
-            RestRequest request = new RestRequest("/users/OKuzmanov/repos", Method.Get);
+            RestRequest request = new RestRequest($"/users/{owner}/repos", Method.Get);
 
             RestResponse response = await this.client.ExecuteAsync(request);
 
@@ -43,7 +46,7 @@ namespace GitHub_Repos_API_Tests
         [Test]
         public async Task Test_GetRepository()
         {
-            RestRequest request = new RestRequest("/repos/OKuzmanov/QA-Automation-SoftUni", Method.Get);
+            RestRequest request = new RestRequest($"/repos/{owner}/QA-Automation-SoftUni", Method.Get);
 
             RestResponse response = await this.client.ExecuteAsync(request);
 
@@ -60,7 +63,7 @@ namespace GitHub_Repos_API_Tests
         [Test]
         public async Task Test_GetRepositoryInvalidRepoName()
         {
-            RestRequest request = new RestRequest("/repos/OKuzmanov/NonExistentRepo", Method.Get);
+            RestRequest request = new RestRequest($"/repos/{owner}/NonExistentRepo", Method.Get);
 
             RestResponse response = await this.client.ExecuteAsync(request);
 
@@ -85,7 +88,7 @@ namespace GitHub_Repos_API_Tests
 
             Assert.That(repo.id, Is.GreaterThan(0));
             Assert.AreEqual(nameToAdd, repo.name);
-            Assert.AreEqual("OKuzmanov/" + nameToAdd, repo.fullName);
+            Assert.AreEqual($"{owner}/" + nameToAdd, repo.fullName);
             Assert.AreEqual(descriptionToAdd, repo.description);
 
             int newRepoCount = await getReposCount();
@@ -96,7 +99,7 @@ namespace GitHub_Repos_API_Tests
         public async Task Test_DeleteRepository()
         {
             string nameToDelete = "Test_Repo_RestSharp";
-            RestRequest request = new RestRequest("/repos/Okuzmanov/" + nameToDelete, Method.Delete);
+            RestRequest request = new RestRequest($"/repos/{owner}/" + nameToDelete, Method.Delete);
 
             int oldRepoCount = await getReposCount();
 
@@ -112,7 +115,7 @@ namespace GitHub_Repos_API_Tests
         public async Task Test_DeleteRepositoryInvalidRepoName()
         {
             string nameToDelete = "NonExistentRepo";
-            RestRequest request = new RestRequest("/repos/Okuzmanov/" + nameToDelete, Method.Delete);
+            RestRequest request = new RestRequest($"/repos/{owner}/" + nameToDelete, Method.Delete);
 
             RestResponse response = await this.client.ExecuteAsync(request);
 
@@ -122,32 +125,46 @@ namespace GitHub_Repos_API_Tests
         [Test]
         public async Task Test_UpdateRepository()
         {
-            string repoName = "Test_Repo_RestSharp";
-            RestRequest request = new RestRequest("/repos/OKuzmanov/" + repoName, Method.Patch);
-            string updatedName = "Updated_TestRepo_Name";
-            string updatedDescription = "Updated Description using the RestSharp Api.";
-            request.AddJsonBody(new GithubRepo(updatedName, updatedDescription, true));
+            string name = "Test_Repo_Update";
+            string body = "Create to test the update repo func.";
+            GithubRepo newRepo = await NewMethod(name, body);
+
+            RestRequest request = new RestRequest($"/repos/{owner}/" + newRepo.name, Method.Patch);
+           
+            request.AddJsonBody(new GithubRepo("Updated-Repo-Name", "Updated Description using the RestSharp Api.", true));
 
             int oldRepos = await getReposCount();
+
             RestResponse response = await this.client.ExecuteAsync(request);
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
             GithubRepo repo = JsonSerializer.Deserialize<GithubRepo>(response.Content);
 
-            Assert.AreEqual(updatedName, repo.name);
-            Assert.AreEqual(updatedDescription, repo.description);
+            Assert.AreEqual("Updated-Repo-Name", repo.name);
+            Assert.AreEqual("Updated Description using the RestSharp Api.", repo.description);
             Assert.AreEqual(true, repo.access);
 
             int newRepos = await getReposCount();
+
             Assert.AreEqual(oldRepos, newRepos);
+        }
+
+        private async Task<GithubRepo> NewMethod(string name, string description)
+        {
+            RestRequest request = new RestRequest("/user/repos", Method.Post);
+            request.AddJsonBody(new { name = name, description = description });
+
+            RestResponse response = await this.client.ExecuteAsync(request);
+
+            return JsonSerializer.Deserialize<GithubRepo>(response.Content);
         }
 
         [Test]
         public async Task Test_UpdateRepositoryInvalidRepoName()
         {
             string repoName = "NonExistentRepoName";
-            RestRequest request = new RestRequest("/repos/OKuzmanov/" + repoName, Method.Patch);
+            RestRequest request = new RestRequest($"/repos/{owner}/" + repoName, Method.Patch);
 
             RestResponse response = await this.client.ExecuteAsync(request);
 
