@@ -158,6 +158,66 @@ namespace NakovCalcWebDriverTestsPOM
             Assert.That(sumNumbersPage.IsFormEmpty, Is.False);
         }
 
-        //TODO: Infinity Tests
+        [TestCase("Infinity", "Infinity", "Result: Infinity")]
+        [TestCase("Infinity", "1", "Result: Infinity")]
+        [TestCase("Infinity", "", "Result: invalid input")]
+        [TestCase("Infinity", "asdas", "Result: invalid input")]
+        public void Test_AddOperationWithInfinity(string num1, string num2, string resultExpected)
+        {
+            SumNumbersPage sumNumbersPage = new SumNumbersPage(this.driver);
+
+            sumNumbersPage.OpenPage();
+
+            string resultActual = sumNumbersPage.AddNumbers(num1, num2);
+
+            Assert.AreEqual(resultExpected, resultActual);
+        }
+
+        [TestCase("Infinity", "Infinity", "Result: invalid calculation")]
+        [TestCase("Infinity", "1", "Result: Infinity")]
+        [TestCase("Infinity", "", "Result: invalid input")]
+        [TestCase("Infinity", "adsasdas", "Result: invalid input")]
+        public void Test_SubtractOperationWithInfinity(string num1, string num2, string resultExpected)
+        {
+            SumNumbersPage sumNumbersPage = new SumNumbersPage(this.driver);
+
+            sumNumbersPage.OpenPage();
+
+            string resultActual = sumNumbersPage.SubtractNumbers(num1, num2);
+
+            Assert.AreEqual(resultExpected, resultActual);
+        }
+
+        [TestCase("Infinity", "Infinity", "Result: Infinity")]
+        [TestCase("Infinity", "1", "Result: Infinity")]
+        [TestCase("Infinity", "", "Result: invalid input")]
+        [TestCase("Infinity", "asdasd", "Result: invalid input")]
+        [TestCase("Infinity", "0", "Result: invalid calculation")]
+        public void Test_MultiplyOperationWithInfinity(string num1, string num2, string resultExpected)
+        {
+            SumNumbersPage sumNumbersPage = new SumNumbersPage(this.driver);
+
+            sumNumbersPage.OpenPage();
+
+            string resultActual = sumNumbersPage.MultiplyNumbers(num1, num2);
+
+            Assert.AreEqual(resultExpected, resultActual);
+        }
+
+        [TestCase("Infinity", "Infinity", "Result: invalid calculation")]
+        [TestCase("Infinity", "1", "Result: Infinity")]
+        [TestCase("Infinity", "", "Result: invalid input")]
+        [TestCase("Infinity", "asdasd", "Result: invalid input")]
+        [TestCase("Infinity", "0", "Result: Infinity")]
+        public void Test_DivideOperationWithInfinity(string num1, string num2, string resultExpected)
+        {
+            SumNumbersPage sumNumbersPage = new SumNumbersPage(this.driver);
+
+            sumNumbersPage.OpenPage();
+
+            string resultActual = sumNumbersPage.DivideNumbers(num1, num2);
+
+            Assert.AreEqual(resultExpected, resultActual);
+        }
     }
 }

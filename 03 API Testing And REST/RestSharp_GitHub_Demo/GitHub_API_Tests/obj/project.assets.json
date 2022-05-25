@@ -3907,11 +3907,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Oleg\\Desktop\\QA Automation May 2022\\03 API Testing And REST\\RestSharp_GitHub_Demo\\GitHub_API_Tests\\GitHub_API_Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\03 API Testing And REST\\RestSharp_GitHub_Demo\\GitHub_API_Tests\\GitHub_API_Tests.csproj",
       "projectName": "GitHub_API_Tests",
-      "projectPath": "C:\\Users\\Oleg\\Desktop\\QA Automation May 2022\\03 API Testing And REST\\RestSharp_GitHub_Demo\\GitHub_API_Tests\\GitHub_API_Tests.csproj",
+      "projectPath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\03 API Testing And REST\\RestSharp_GitHub_Demo\\GitHub_API_Tests\\GitHub_API_Tests.csproj",
       "packagesPath": "C:\\Users\\Oleg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Oleg\\Desktop\\QA Automation May 2022\\03 API Testing And REST\\RestSharp_GitHub_Demo\\GitHub_API_Tests\\obj\\",
+      "outputPath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\03 API Testing And REST\\RestSharp_GitHub_Demo\\GitHub_API_Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Oleg\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3928,8 +3928,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Oleg\\Desktop\\QA Automation May 2022\\03 API Testing And REST\\RestSharp_GitHub_Demo\\RestSharp_GitHub_Demo\\GitHub_Models.csproj": {
-              "projectPath": "C:\\Users\\Oleg\\Desktop\\QA Automation May 2022\\03 API Testing And REST\\RestSharp_GitHub_Demo\\RestSharp_GitHub_Demo\\GitHub_Models.csproj"
+            "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\03 API Testing And REST\\RestSharp_GitHub_Demo\\RestSharp_GitHub_Demo\\GitHub_Models.csproj": {
+              "projectPath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\03 API Testing And REST\\RestSharp_GitHub_Demo\\RestSharp_GitHub_Demo\\GitHub_Models.csproj"
             }
           }
         }

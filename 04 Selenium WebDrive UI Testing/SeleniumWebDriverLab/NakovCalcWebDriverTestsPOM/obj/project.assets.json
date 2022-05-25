@@ -1314,11 +1314,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Oleg\\Desktop\\SeleniumWebDriverDemo\\NakovCalcWebDriverTestsPOM\\NakovCalcWebDriverTestsPOM.csproj",
+      "projectUniqueName": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\04 Selenium WebDrive UI Testing\\SeleniumWebDriverLab\\NakovCalcWebDriverTestsPOM\\NakovCalcWebDriverTestsPOM.csproj",
       "projectName": "NakovCalcWebDriverTestsPOM",
-      "projectPath": "C:\\Users\\Oleg\\Desktop\\SeleniumWebDriverDemo\\NakovCalcWebDriverTestsPOM\\NakovCalcWebDriverTestsPOM.csproj",
+      "projectPath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\04 Selenium WebDrive UI Testing\\SeleniumWebDriverLab\\NakovCalcWebDriverTestsPOM\\NakovCalcWebDriverTestsPOM.csproj",
       "packagesPath": "C:\\Users\\Oleg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Oleg\\Desktop\\SeleniumWebDriverDemo\\NakovCalcWebDriverTestsPOM\\obj\\",
+      "outputPath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\04 Selenium WebDrive UI Testing\\SeleniumWebDriverLab\\NakovCalcWebDriverTestsPOM\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Oleg\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -113,11 +113,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Oleg\\Desktop\\SeleniumWebDriverDemo\\WebDriverDemo\\WebDriverDemo.csproj",
+      "projectUniqueName": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\04 Selenium WebDrive UI Testing\\SeleniumWebDriverLab\\WebDriverDemo\\WebDriverDemo.csproj",
       "projectName": "WebDriverDemo",
-      "projectPath": "C:\\Users\\Oleg\\Desktop\\SeleniumWebDriverDemo\\WebDriverDemo\\WebDriverDemo.csproj",
+      "projectPath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\04 Selenium WebDrive UI Testing\\SeleniumWebDriverLab\\WebDriverDemo\\WebDriverDemo.csproj",
       "packagesPath": "C:\\Users\\Oleg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Oleg\\Desktop\\SeleniumWebDriverDemo\\WebDriverDemo\\obj\\",
+      "outputPath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\04 Selenium WebDrive UI Testing\\SeleniumWebDriverLab\\WebDriverDemo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Oleg\\AppData\\Roaming\\NuGet\\NuGet.Config",

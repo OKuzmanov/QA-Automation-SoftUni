@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sHsHZrYeD6tjdzRH9IwmBhT57HkNhDGIlclnPpwvHJ64j4YRPebKTx1UOaRYALrmV4kkmA81fkFnWuLf90bv2Q==",
+  "dgSpecHash": "7qvCqk4MmHPBrrit6FlNhDQ3WTX0ZHvwCvpj94kpVgZ2FQESeEAfvEtkI/HwwhP4jmWL/oBSlvScOZ09FwnG+g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Oleg\\Desktop\\QA Automation May 2022\\03 API Testing And REST\\RestSharp_GitHub_Demo\\GitHub_API_Tests\\GitHub_API_Tests.csproj",
+  "projectFilePath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\03 API Testing And REST\\RestSharp_GitHub_Demo\\GitHub_API_Tests\\GitHub_API_Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Oleg\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
     "C:\\Users\\Oleg\\.nuget\\packages\\microsoft.codecoverage\\16.11.0\\microsoft.codecoverage.16.11.0.nupkg.sha512",

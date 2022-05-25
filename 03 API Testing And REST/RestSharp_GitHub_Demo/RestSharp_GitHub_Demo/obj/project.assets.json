@@ -44,11 +44,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Oleg\\Desktop\\QA Automation May 2022\\03 API Testing And REST\\RestSharp_GitHub_Demo\\RestSharp_GitHub_Demo\\GitHub_Models.csproj",
+      "projectUniqueName": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\03 API Testing And REST\\RestSharp_GitHub_Demo\\RestSharp_GitHub_Demo\\GitHub_Models.csproj",
       "projectName": "GitHub_Models",
-      "projectPath": "C:\\Users\\Oleg\\Desktop\\QA Automation May 2022\\03 API Testing And REST\\RestSharp_GitHub_Demo\\RestSharp_GitHub_Demo\\GitHub_Models.csproj",
+      "projectPath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\03 API Testing And REST\\RestSharp_GitHub_Demo\\RestSharp_GitHub_Demo\\GitHub_Models.csproj",
       "packagesPath": "C:\\Users\\Oleg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Oleg\\Desktop\\QA Automation May 2022\\03 API Testing And REST\\RestSharp_GitHub_Demo\\RestSharp_GitHub_Demo\\obj\\",
+      "outputPath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\03 API Testing And REST\\RestSharp_GitHub_Demo\\RestSharp_GitHub_Demo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Oleg\\AppData\\Roaming\\NuGet\\NuGet.Config",

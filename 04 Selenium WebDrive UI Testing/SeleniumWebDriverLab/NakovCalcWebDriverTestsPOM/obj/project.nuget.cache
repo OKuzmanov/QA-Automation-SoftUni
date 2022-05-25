@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RtcK62t43tIkXuIckbCzmfRSTg+Wv2V950V/LyN2EMB47lyIh3hopOiG9fvS8Bdq0eX9bfrRJZHC0RRLR28hmA==",
+  "dgSpecHash": "gbVug5grEQ1FtyuWfJdl2HgXzv/Ev97ol6I47bplXF07AMoQrzQkeCwDechKsMMiFyn5EjmXVd3qcQRkrUx3Ww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Oleg\\Desktop\\SeleniumWebDriverDemo\\NakovCalcWebDriverTestsPOM\\NakovCalcWebDriverTestsPOM.csproj",
+  "projectFilePath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\04 Selenium WebDrive UI Testing\\SeleniumWebDriverLab\\NakovCalcWebDriverTestsPOM\\NakovCalcWebDriverTestsPOM.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Oleg\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
     "C:\\Users\\Oleg\\.nuget\\packages\\microsoft.codecoverage\\16.11.0\\microsoft.codecoverage.16.11.0.nupkg.sha512",

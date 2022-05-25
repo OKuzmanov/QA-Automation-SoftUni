@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iVkF35tXDw03Mz0qPznuh2PFe9mr+ytBSwPJCivgXsp5lXpSIJr5TwH4IieD/5FyCLE/2Ao6vLC0lCKeh27tdQ==",
+  "dgSpecHash": "TIw/MRI6JIJJefLziWuvzAkGsVzqk9GocPFv7DtURLrgHzxfv0XAOF/HMSLUNcEs6CJP1VGc+Uncb+RbZ8xQzg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Oleg\\Desktop\\QA Automation May 2022\\03 API Testing And REST\\RestSharp_GitHub_Demo\\RestSharp_GitHub_Demo\\GitHub_Models.csproj",
+  "projectFilePath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\03 API Testing And REST\\RestSharp_GitHub_Demo\\RestSharp_GitHub_Demo\\GitHub_Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Oleg\\.nuget\\packages\\restsharp\\107.3.0\\restsharp.107.3.0.nupkg.sha512"
   ],

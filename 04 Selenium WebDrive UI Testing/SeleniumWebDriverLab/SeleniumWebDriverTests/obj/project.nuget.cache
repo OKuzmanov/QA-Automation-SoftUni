@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/3r9C15tXEhjbpB62Y46KBZJjMV71u6JhqeWMVVjNKltvRprIZIs1ulffi1OVTjtOXKuYvy2mMH5Psd69FiRXw==",
+  "dgSpecHash": "vEtiwmsI1cHqxxkzn8p9nfT2cnCYYKL8abz237eunD2QYNQmLrPGSJ4L10KFUVzx3DqDRWKXIF2Lpuz/YYRtKQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Oleg\\Desktop\\SeleniumWebDriverDemo\\SeleniumWebDriverTests\\SeleniumWebDriverTests.csproj",
+  "projectFilePath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\04 Selenium WebDrive UI Testing\\SeleniumWebDriverLab\\SeleniumWebDriverTests\\SeleniumWebDriverTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Oleg\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
     "C:\\Users\\Oleg\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
