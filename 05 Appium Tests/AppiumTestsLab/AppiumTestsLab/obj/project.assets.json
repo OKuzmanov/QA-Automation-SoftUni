@@ -4345,11 +4345,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Oleg\\Desktop\\AppiumTestsLab\\AppiumTestsLab\\AppiumTestsLab.csproj",
+      "projectUniqueName": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\05 Appium Tests\\AppiumTestsLab\\AppiumTestsLab\\AppiumTestsLab.csproj",
       "projectName": "AppiumTestsLab",
-      "projectPath": "C:\\Users\\Oleg\\Desktop\\AppiumTestsLab\\AppiumTestsLab\\AppiumTestsLab.csproj",
+      "projectPath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\05 Appium Tests\\AppiumTestsLab\\AppiumTestsLab\\AppiumTestsLab.csproj",
       "packagesPath": "C:\\Users\\Oleg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Oleg\\Desktop\\AppiumTestsLab\\AppiumTestsLab\\obj\\",
+      "outputPath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\05 Appium Tests\\AppiumTestsLab\\AppiumTestsLab\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Oleg\\AppData\\Roaming\\NuGet\\NuGet.Config",

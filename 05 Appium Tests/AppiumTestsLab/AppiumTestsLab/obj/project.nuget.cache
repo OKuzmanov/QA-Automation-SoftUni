@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l/XRY19flXJ01Q5EUlHN8eZ9YyIJ1u7Lrk8cG7d9QSRJKsFqCaCtdj9NmDvxFh0/KWfbeZpz3wLPNnZS565BYQ==",
+  "dgSpecHash": "HZIM9Xiu8HTTKlq/TxDicQLBhkDK/AtExULCXR+JuX/Rb9Ws67HnTxGPWlCUFpQsVfcpT1rMrfIZml1J0lG0/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Oleg\\Desktop\\AppiumTestsLab\\AppiumTestsLab\\AppiumTestsLab.csproj",
+  "projectFilePath": "C:\\Users\\Oleg\\Desktop\\QA-Automation-SoftUni\\05 Appium Tests\\AppiumTestsLab\\AppiumTestsLab\\AppiumTestsLab.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Oleg\\.nuget\\packages\\appium.webdriver\\4.3.1\\appium.webdriver.4.3.1.nupkg.sha512",
     "C:\\Users\\Oleg\\.nuget\\packages\\castle.core\\4.3.1\\castle.core.4.3.1.nupkg.sha512",
