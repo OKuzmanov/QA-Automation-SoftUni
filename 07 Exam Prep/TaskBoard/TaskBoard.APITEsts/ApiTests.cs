@@ -298,5 +298,62 @@ namespace TaskBoard.APITEsts
 
             Assert.AreEqual(errMsg, responseDelete.Content);
         }
+
+        [Test]
+        public void Test_EditTasks_ValidIndex()
+        {
+            string newTitle = "New Title " + DateTime.Now.Ticks;
+            string newDescription = "New Description " + DateTime.Now.Ticks;
+            string board = "Open";
+
+            //Create new task
+            RestRequest request = new RestRequest(baseURl + "/api/tasks", Method.Post);
+            request.AddJsonBody(new { title = newTitle, description = newDescription, board = board });
+
+            RestResponse response = this.client.Execute(request);
+
+            string json = response.Content.Substring(28);
+            json = json.Remove(json.Length - 1, 1);
+            Task? createdTask = JsonSerializer.Deserialize<Task>(json);
+
+            //Edit Created Task
+            string editedTitle = "Modified Title";
+            string editedDescription = "Modified Description.";
+
+            RestRequest editRequest = new RestRequest(baseURl + "/api/tasks/" + createdTask.id, Method.Patch);
+            editRequest.AddJsonBody(new {title = editedTitle, description = editedDescription});
+
+            RestResponse editResponse = this.client.Execute(editRequest);
+
+            Assert.AreEqual(HttpStatusCode.Created, editResponse.StatusCode);
+
+            //Get Edited Task
+            RestRequest getRequest = new RestRequest(baseURl + "/api/tasks/" + createdTask.id);
+
+            RestResponse getResponse = this.client.Execute(getRequest);
+
+            Task? editedTask = JsonSerializer.Deserialize<Task>(getResponse.Content);
+
+            //Assert
+            Assert.AreEqual(editedTitle, editedTask.title);
+            Assert.AreEqual(editedDescription, editedTask.description);
+        }
+
+        [Test]
+        public void Test_EditTasks_invalidIndex()
+        {
+            //Edit Task
+            long invalidId = DateTime.Now.Ticks;
+
+            string errMsg = "{\"errMsg\":\"Cannot find task by id: " + invalidId + "\"}";
+
+            RestRequest editRequest = new RestRequest(baseURl + "/api/tasks/" + invalidId, Method.Patch);
+
+            RestResponse editResponse = this.client.Execute(editRequest);
+
+            Assert.AreEqual(HttpStatusCode.BadRequest, editResponse.StatusCode);
+
+            Assert.AreEqual(errMsg, editResponse.Content);
+        }
     }
 }
