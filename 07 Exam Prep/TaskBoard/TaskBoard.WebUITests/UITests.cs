@@ -100,7 +100,7 @@ namespace TaskBoard.WebUITests
             var taskSections = driver.FindElements(By.ClassName("task"));
 
             var inProgressTasks = taskSections[1].FindElements(By.TagName("table"));
-
+            
             var taskTitle = inProgressTasks.Last().FindElement(By.ClassName("title")).Text;
             var taskDescription = inProgressTasks.Last().FindElement(By.ClassName("description")).Text;
 
